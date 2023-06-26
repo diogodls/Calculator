@@ -1,14 +1,24 @@
 import styled from 'styled-components';
+import {useContext} from "react";
+import {CalculatorContext} from "../../context/CalculatorContext.tsx";
 
 interface ButtonProps {
-  value: string,
   label: string,
-  onClick: () => void,
+  value?: string,
+  onClick?: () => void,
+  style?: object,
 }
 
-const Button = ({label, onClick}: ButtonProps) => {
+const Button = ({label, value, style, onClick}: ButtonProps) => {
+  const { setResult } = useContext(CalculatorContext);
+
+  const updateResult = () => {
+    if(!value) return;
+    setResult((result) => result + value);
+  }
+
   return (
-    <CalculatorButton onClick={onClick}>
+    <CalculatorButton onClick={onClick ?? updateResult} style={style}>
       {label}
     </CalculatorButton>
   );

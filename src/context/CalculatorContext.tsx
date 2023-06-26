@@ -1,8 +1,10 @@
-import {createContext, ReactNode, useState} from 'react';
+import React, {createContext, ReactNode, useState} from 'react';
 
 interface CalculatorContextProps {
-  result: number;
-  updateResult: (newResult: number) => void;
+  result: string;
+  setResult: React.Dispatch<React.SetStateAction<string>>;
+  calculateResult: () => void;
+  clearResult: () => void;
 }
 
 interface CalculatorProviderProps {
@@ -12,13 +14,18 @@ interface CalculatorProviderProps {
 export const CalculatorContext  = createContext({} as CalculatorContextProps);
 
 const CalculatorProvider = ({children}: CalculatorProviderProps) => {
-  const [result, setResult] = useState<number>(0);
+  const [result, setResult] = useState<string>('');
 
-  const updateResult = (newNumber: number) => {
-    setResult(newNumber);
+  const calculateResult = () => {
+    setResult((result) => eval(result));
+  };
+
+  const clearResult = () => {
+    setResult('');
   }
+
   return (
-    <CalculatorContext.Provider value={{result, updateResult}}>
+    <CalculatorContext.Provider value={{result, setResult, calculateResult, clearResult}}>
       {children}
     </CalculatorContext.Provider>
   );

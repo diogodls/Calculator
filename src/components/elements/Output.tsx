@@ -1,9 +1,14 @@
 import styled from "styled-components";
+import {useContext} from "react";
+import {CalculatorContext} from "../../context/CalculatorContext.tsx";
 
 const Output = () => {
+  const {result} = useContext(CalculatorContext)
   return (
     <OutputStyles>
-      aqui vai ter os resultados
+      <div style={{paddingInline: '20px'}}>
+        {result}
+      </div>
     </OutputStyles>
   );
 };
