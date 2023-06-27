@@ -38,9 +38,14 @@ const CalculatorButton = styled.button`
   color: var(--color);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   font-size: 1em;
+  transition: .5s ;
   
   &:hover{
     border: 2px solid #0C8CE9;
+  }
+  
+  &:active {
+    transform: scale(1.2);
   }
 `
 

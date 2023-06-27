@@ -23,8 +23,9 @@ const CalculatorProvider = ({children}: CalculatorProviderProps) => {
     const unterminedExpression = verifyLastCharacter(result);
     if(unterminedExpression) return alert('Você não pode finalizar uma expressão com um símbolo.');
 
-    setResult(`${eval(result)}`);
-    setHistory((history) => [...history, `${result} = ${eval(result)}`]);
+    const formattedResult = `${eval(result)}`;
+    setResult(formattedResult);
+    setHistory((history) => [...history, `${result} = ${formattedResult}`]);
   };
 
   const updateResult = (newValue: string) => {

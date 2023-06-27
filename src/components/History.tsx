@@ -25,6 +25,13 @@ const HistoryStyles = styled.div`
   border: 2px solid var(--terciary-color);
   display: flex;
   flex-flow: column;
+  gap: 15px;
+  width: 300px;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  max-height: 40vh;
+  overflow: auto;
 `
 
 export default History;
