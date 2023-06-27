@@ -7,7 +7,7 @@ const Output = () => {
   return (
     <OutputStyles>
       <div style={{paddingInline: '20px'}}>
-        {result}
+        <span>{result}</span>
       </div>
     </OutputStyles>
   );

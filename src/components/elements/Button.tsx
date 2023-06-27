@@ -10,15 +10,15 @@ interface ButtonProps {
 }
 
 const Button = ({label, value, style, onClick}: ButtonProps) => {
-  const { setResult } = useContext(CalculatorContext);
+  const { updateResult } = useContext(CalculatorContext);
 
-  const updateResult = () => {
+  const setResult = () => {
     if(!value) return;
-    setResult((result) => result + value);
+    updateResult(value);
   }
 
   return (
-    <CalculatorButton onClick={onClick ?? updateResult} style={style}>
+    <CalculatorButton onClick={onClick ?? setResult} style={style}>
       {label}
     </CalculatorButton>
   );

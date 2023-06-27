@@ -36,7 +36,7 @@ const Buttons = () => {
         <Button label={'*'} value={'*'}/>
         <Button label={'-'} value={'-'}/>
         <Button label={'+'} value={'+'}/>
-        <Button label={'='} value={''} style={SubmitButtonStyle} onClick={calculateResult}/>
+        <Button label={'='} value={''} style={SubmitButtonStyle} onClick={() => calculateResult()}/>
       </Columns>
     </ButtonsStyles>
   );
