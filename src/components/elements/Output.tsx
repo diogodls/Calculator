@@ -3,7 +3,8 @@ import {useContext} from "react";
 import {CalculatorContext} from "../../context/CalculatorContext.tsx";
 
 const Output = () => {
-  const {result} = useContext(CalculatorContext)
+  const {result} = useContext(CalculatorContext);
+
   return (
     <OutputStyles>
       <div style={{paddingInline: '20px'}}>
@@ -18,7 +19,7 @@ const OutputStyles = styled.div`
   width: calc(var(--calculator-width) - 6px);
   display: flex;
   justify-content: right;
-  border: 2px solid var(--output-border-color);
+  border: 2px solid var(--terciary-color);
   border-radius: var(--border-radius);
   color: var(--color);
 `

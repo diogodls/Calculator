@@ -1,7 +1,9 @@
 :root {
   --background-color: #1E1E1E;
+  --primary-color: #201A1A;
+  --secondary-color: #5D5FEF;
   --color: #FAFAFA;
-  --output-border-color: #5F2F03;
+  --terciary-color: #5F2F03;
   --calculator-width: 370px;
   --border-radius: 10px;
 }

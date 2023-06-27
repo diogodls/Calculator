@@ -1,9 +1,9 @@
-import React, {createContext, ReactNode, useState} from 'react';
+import {createContext, ReactNode, useState} from 'react';
 import {verifyLastCharacter} from "../utils/verifyLastCharacter.ts";
 import {SIMBOLS} from "../const/constants.ts";
 interface CalculatorContextProps {
   result: string;
-  setResult: React.Dispatch<React.SetStateAction<string>>;
+  history: string[]
   calculateResult: () => void;
   updateResult: (newValue: string) => void;
   clearResult: () => void;
@@ -21,20 +21,20 @@ const CalculatorProvider = ({children}: CalculatorProviderProps) => {
 
   const calculateResult = () => {
     const unterminedExpression = verifyLastCharacter(result);
-    if(unterminedExpression) return alert('Você não pode finalizar uma expressão com um símbolo.')
-    setResult((result) => `${eval(result)}`);
-    setHistory((history) => [...history, result]);
+    if(unterminedExpression) return alert('Você não pode finalizar uma expressão com um símbolo.');
+
+    setResult(`${eval(result)}`);
+    setHistory((history) => [...history, `${result} = ${eval(result)}`]);
   };
 
   const updateResult = (newValue: string) => {
     let formattedValue: string;
-    console.log(result)
-    //TODO: aqui trocar o resultado para o input
+
     if(SIMBOLS.includes(result.substring(result.length - 1)) && SIMBOLS.includes(newValue)) {
       formattedValue = result.slice(0, -1) + newValue;
     }
+
     setResult((result) => formattedValue ?? (result + newValue));
-    // calculateResult(formattedValue ?? newValue);
   }
 
   const clearResult = () => {
@@ -42,7 +42,7 @@ const CalculatorProvider = ({children}: CalculatorProviderProps) => {
   }
 
   return (
-    <CalculatorContext.Provider value={{result, setResult, calculateResult, updateResult, clearResult}}>
+    <CalculatorContext.Provider value={{result, history, calculateResult, updateResult, clearResult}}>
       {children}
     </CalculatorContext.Provider>
   );
