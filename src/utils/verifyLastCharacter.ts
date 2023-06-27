@@ -1,6 +1,6 @@
 import {SIMBOLS} from "../const/constants.ts";
 
 export const verifyLastCharacter = (inputValue: string) => {
-  const simbolLastCharacter = inputValue.substring(inputValue.length - 1);
-  if(SIMBOLS.includes(simbolLastCharacter)) return true;
+  const symbolLastCharacter = inputValue.slice(-1);
+  if(SIMBOLS.includes(symbolLastCharacter)) return true;
 }

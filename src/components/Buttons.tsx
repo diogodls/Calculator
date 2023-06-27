@@ -55,6 +55,6 @@ const Columns = styled.div`
   gap: 11px;
 `
 const SubmitButtonStyle = {
-  backgroundColor: '#5D5FEF',
+  backgroundColor: 'var(--secondary-color)',
 }
 export default Buttons;

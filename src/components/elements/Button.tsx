@@ -25,19 +25,19 @@ const Button = ({label, value, style, onClick}: ButtonProps) => {
 }
 
 const CalculatorButton = styled.button`
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   padding-inline: 35px;
   padding-block: 25px;
-  border: 2px solid #5D5FEF;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: var(--border-radius);
-  background: #201A1A;
-  color: var(--color);
-  font-size: 1em;
-  cursor: pointer;
   min-width: 50px;
+  background: var(--primary-color);
+  border: 2px solid var(--secondary-color);
+  border-radius: var(--border-radius);
+  color: var(--color);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 1em;
   
   &:hover{
     border: 2px solid #0C8CE9;
