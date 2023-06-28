@@ -1,7 +1,7 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
-import CalculatorProvider from "./context/CalculatorContext.tsx";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App.tsx';
+import CalculatorProvider from './context/CalculatorContext.tsx';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -9,4 +9,4 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <App />
     </CalculatorProvider>
   </React.StrictMode>,
-)
+);

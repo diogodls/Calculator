@@ -1,14 +1,14 @@
-import {useContext} from "react";
-import {CalculatorContext} from "../context/CalculatorContext.tsx";
-import styled from "styled-components";
+import { useContext } from 'react';
+import styled from 'styled-components';
+import { CalculatorContext } from '../context/CalculatorContext.tsx';
 
 const History = () => {
-  const {history} = useContext(CalculatorContext);
+  const { history } = useContext(CalculatorContext);
 
   return (
     <HistoryStyles>
       {history.map((item) => (
-        <span>{item}</span>
+        <HistoryItemStyles>{item}</HistoryItemStyles>
       ))}
     </HistoryStyles>
   );
@@ -32,6 +32,10 @@ const HistoryStyles = styled.div`
   height: 100%;
   max-height: 40vh;
   overflow: auto;
-`
+`;
+
+const HistoryItemStyles = styled.span`
+  height: 1em;
+`;
 
 export default History;

@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import Button from "./elements/Button.tsx";
-import {useContext} from "react";
-import {CalculatorContext} from "../context/CalculatorContext.tsx";
+import { useContext } from 'react';
+import styled from 'styled-components';
+import Button from './elements/Button.tsx';
+import { CalculatorContext } from '../context/CalculatorContext.tsx';
 
 const Buttons = () => {
   const { clearResult, calculateResult } = useContext(CalculatorContext);
@@ -47,14 +47,16 @@ const ButtonsStyles = styled.div`
   flex-wrap: wrap;
   max-width: var(--calculator-width);
   gap: 11px;
-`
+`;
 
 const Columns = styled.div`
   display: flex;
   flex-flow: column;
   gap: 11px;
-`
+`;
+
 const SubmitButtonStyle = {
   backgroundColor: 'var(--secondary-color)',
-}
+};
+
 export default Buttons;
