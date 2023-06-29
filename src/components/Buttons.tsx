@@ -4,7 +4,7 @@ import Button from './elements/Button.tsx';
 import { CalculatorContext } from '../context/CalculatorContext.tsx';
 
 const Buttons = () => {
-  const { clearResult, calculateResult } = useContext(CalculatorContext);
+  const { clearResult, calculateResult, setCalculatorOpen } = useContext(CalculatorContext);
 
   return (
     <ButtonsStyles>
@@ -13,6 +13,7 @@ const Buttons = () => {
         <Button label={'7'} value={'7'}/>
         <Button label={'4'} value={'4'}/>
         <Button label={'1'} value={'1'}/>
+        <Button label={'J'} value={''} onClick={() => setCalculatorOpen(false)} />
       </Columns>
 
       <Columns>

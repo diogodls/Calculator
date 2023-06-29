@@ -7,30 +7,26 @@ const History = () => {
 
   return (
     <HistoryStyles>
-      {history.map((item) => (
-        <HistoryItemStyles>{item}</HistoryItemStyles>
+      {history.map((item, index) => (
+        <HistoryItemStyles key={index}>{item}</HistoryItemStyles>
       ))}
     </HistoryStyles>
   );
 };
 
 const HistoryStyles = styled.div`
-  position: absolute;
-  top: 36%;
-  left: 70%;
-  transform: translate(-10%, -30%);
-  padding: 50px;
   color: var(--color);
   border-radius: var(--border-radius);
   border: 2px solid var(--terciary-color);
   display: flex;
   flex-flow: column;
   gap: 15px;
-  width: 300px;
+  width: var(--calculator-width);
   justify-content: flex-start;
   align-items: center;
-  height: 100%;
-  max-height: 40vh;
+  padding-block: 15px;
+  height: 370px;
+  max-height: 370px;
   overflow: auto;
 `;
 
