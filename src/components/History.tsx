@@ -6,11 +6,15 @@ const History = () => {
   const { history } = useContext(CalculatorContext);
 
   return (
-    <HistoryStyles>
-      {history.map((item, index) => (
-        <HistoryItemStyles key={index}>{item}</HistoryItemStyles>
-      ))}
-    </HistoryStyles>
+    <Column>
+      <h3 style={{color: 'var(--color)'}}>Histórico:</h3>
+      <HistoryStyles>
+
+        {history.map((item, index) => (
+          <HistoryItemStyles key={index}>{item}</HistoryItemStyles>
+        ))}
+      </HistoryStyles>
+    </Column>
   );
 };
 
@@ -32,6 +36,12 @@ const HistoryStyles = styled.div`
 
 const HistoryItemStyles = styled.span`
   height: 1em;
+`;
+
+const Column = styled.div`
+  display: flex;
+  flex-flow: column;
+  text-align: center;
 `;
 
 export default History;

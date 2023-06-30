@@ -29,7 +29,7 @@ const Buttons = () => {
         <Button label={'9'} value={'9'}/>
         <Button label={'6'} value={'6'}/>
         <Button label={'3'} value={'3'}/>
-        <Button label={','} value={','}/>
+        <Button label={'.'} value={'.'}/>
       </Columns>
 
       <Columns>

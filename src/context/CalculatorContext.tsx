@@ -2,6 +2,7 @@ import {createContext, Dispatch, ReactNode, SetStateAction, useState} from 'reac
 import {verifyLastCharacter} from '../utils/verifyLastCharacter.ts';
 import {SIMBOLS} from '../const/constants.ts';
 import {verifyFractionDigits} from '../utils/verifyFractionDigits.ts';
+import {verifyDivisionPerZero} from '../utils/verifyDivisionPerZero.ts';
 
 interface CalculatorContextProps {
   result: string;
@@ -29,12 +30,15 @@ const CalculatorProvider = ({children}: CalculatorProviderProps) => {
 
   const calculateResult = () => {
     if(!result) return;
+
     const unterminedExpression = verifyLastCharacter(result);
     if (unterminedExpression) return alert('Você não pode finalizar uma expressão com um símbolo.');
+    const divisionPerZero = verifyDivisionPerZero(result);
+    if(divisionPerZero) return alert('Você não pode adicionar uma divisão por 0.');
 
-    const formattedResult = `${eval(result)}`;
+    const calculatedResult = eval(result);
+    const formattedResult = `${!verifyFractionDigits(calculatedResult) ? calculatedResult : calculatedResult.toFixed(2)}`;
 
-    //138
     setResult(formattedResult);
     setHistory((history) => [...history, `${result} = ${formattedResult}`]);
   };
