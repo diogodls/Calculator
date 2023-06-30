@@ -9,11 +9,11 @@ const Buttons = () => {
   return (
     <ButtonsStyles>
       <Columns>
-        <Button label={'C'} value={''} onClick={clearResult}/>
+        <Button label={'C'} onClick={clearResult}/>
         <Button label={'7'} value={'7'}/>
         <Button label={'4'} value={'4'}/>
         <Button label={'1'} value={'1'}/>
-        <Button label={'J'} value={''} onClick={() => setCalculatorOpen(false)} />
+        <Button label={'J'} onClick={() => setCalculatorOpen(false)} />
       </Columns>
 
       <Columns>
@@ -37,7 +37,7 @@ const Buttons = () => {
         <Button label={'*'} value={'*'}/>
         <Button label={'-'} value={'-'}/>
         <Button label={'+'} value={'+'}/>
-        <Button label={'='} value={''} style={SubmitButtonStyle} onClick={() => calculateResult()}/>
+        <Button label={'='} style={SubmitButtonStyle} onClick={() => calculateResult()}/>
       </Columns>
     </ButtonsStyles>
   );

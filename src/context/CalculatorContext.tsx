@@ -1,6 +1,7 @@
 import {createContext, Dispatch, ReactNode, SetStateAction, useState} from 'react';
 import {verifyLastCharacter} from '../utils/verifyLastCharacter.ts';
 import {SIMBOLS} from '../const/constants.ts';
+import {verifyFractionDigits} from '../utils/verifyFractionDigits.ts';
 
 interface CalculatorContextProps {
   result: string;
@@ -53,7 +54,9 @@ const CalculatorProvider = ({children}: CalculatorProviderProps) => {
   };
 
   const calculateCompoundInterest = (initialCapital: number, interestRate: number, applicationTime: number) => {
-    setAmount(initialCapital * (1 - (interestRate / 100))^(applicationTime / 12));
+    const interestResult = initialCapital * ((1 + interestRate / 100)**applicationTime);
+
+    setAmount(!verifyFractionDigits(interestResult) ? interestResult : Number(interestResult.toFixed(2)));
   };
 
   return (
