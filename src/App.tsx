@@ -15,17 +15,21 @@ function App() {
     <AppStyles>
       <AppSectionStyles>
         {calculatorOpen ? <Calculator/> : <CompoundCalculator />}
-        <History/>
+        {calculatorOpen ? <History/> : <></>}
       </AppSectionStyles>
     </AppStyles>
   );
 }
 
 const AppStyles = styled.section`
-  height: 100vh;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (min-width: ${SCREEN_SIZES.MOBILE}) {
+    height: 100vh;
+  }
 `;
 
 const AppSectionStyles = styled.section`
@@ -36,8 +40,8 @@ const AppSectionStyles = styled.section`
   gap: 2rem;
   
   @media (max-width: ${SCREEN_SIZES.MOBILE}) {
-    height: 100vh;
     flex-flow: column;
+    padding-block: 20px;
   }
 `;
 

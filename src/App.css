@@ -4,4 +4,5 @@ body {
   box-sizing: border-box;
   background-color: var(--background-color);
   font-family: Verdana, sans-serif;
+  overflow: auto;
 }
