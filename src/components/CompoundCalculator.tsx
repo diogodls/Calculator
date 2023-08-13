@@ -4,7 +4,7 @@ import Button from './elements/Button.tsx';
 import {CalculatorContext} from '../context/CalculatorContext.tsx';
 
 const CompoundCalculator = () => {
-  const { amount, calculateCompoundInterest } = useContext(CalculatorContext);
+  const { amount, calculateCompoundInterest, setCalculatorOpen } = useContext(CalculatorContext);
   const [initialCapital, setInitialCapital] = useState<number>(0);
   const [interestRate, setInterestRate] = useState<number>(0);
   const [applicationTime, setApplicationTime] = useState<number>(0);
@@ -32,6 +32,7 @@ const CompoundCalculator = () => {
 
       <span>Resultado: R${amount}</span>
       <Button label={'Calcular'} style={CalculateStyles} onClick={() => calculateCompoundInterest(initialCapital, interestRate, applicationTime)}/>
+      <Button label={'Voltar'} style={BackButton} onClick={() => setCalculatorOpen(true)}/>
     </CompoundCalculatorStyles>
   );
 };
@@ -72,6 +73,10 @@ const CalculateStyles = {
   fontWeight: '400',
   fontSize: '1.1em',
   padding: '15px',
+};
+
+const BackButton = {
+  padding: '12px',
 };
 
 export default CompoundCalculator;
