@@ -8,6 +8,7 @@ Fiz esse projeto em parceria com um grupo de amigos, com objetivo de melhorar no
 ### Calculadora
 - Executa expressões númericas;
 - Tem histórico com as operações recentes;
+- Possui algumas regras de validação.
 
 ### Calculadora de juros compostos
 - Calcula o valor de juros com base nos valores: capital inicial, taxa de juros e tempo de aplicação;
@@ -15,7 +16,8 @@ Fiz esse projeto em parceria com um grupo de amigos, com objetivo de melhorar no
 ___
 
 ## ⚙️ Instalação
-1. Para executar o projeto basta somente rodar `npm run dev`.
+1. Ao clonar o projeto é preciso rodar `npm install`.
+2. Para executar o projeto basta somente rodar `npm run dev`.
 
 ---
 
